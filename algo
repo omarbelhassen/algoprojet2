@@ -1,0 +1,36 @@
+ALGORITHM ex1
+VAR
+    arr1 : ARRAY_OF_INTEGER[10]
+    arr2 : ARRAY_OF_INTEGER[10]
+   j,i,sum:INTEGER;
+   test : BOOLEAN;
+BEGIN
+    arr1= [7,5,6,1];
+    arr2 = [7,4,3,1];
+    test = true;
+
+  FOR i FROM 0 TO arr1.length -1 STEP 1  DO
+      FOR j FROM 0 TO arr2.length -1 STEP 1  DO
+          IF (arr1[i]==arr2[j]) THEN
+          test := false
+              break;
+          END_IF
+      END_FOR
+      IF (test) THEN
+          sum:=sum+arr1[i]
+      END_IF
+  END_FOR
+  FOR i FROM 0 TO arr2.length -1 STEP 1  DO
+      FOR j FROM 0 TO arr1.length -1 STEP 1  DO
+          IF (arr2[i]==arr1[j]) THEN
+          test := false
+              break;
+          END_IF
+      END_FOR
+      IF (test) THEN
+          sum:=sum+arr2[i]
+      END_IF
+  END_FOR
+  
+END
+
